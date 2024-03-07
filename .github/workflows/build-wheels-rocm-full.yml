@@ -86,7 +86,7 @@ jobs:
   build_wheels:
     name: Build ${{ matrix.os }} ${{ matrix.avx }} ROCm ${{ matrix.rocm }} ${{ matrix.rename == '1' && 'Textgen Wheel' || 'Wheel' }} ${{ matrix.pyver }}
     needs: define_matrix
-    runs-on: ${{ matrix.os }}
+    runs-on: self-hosted
     strategy:
       matrix: ${{ fromJSON(needs.define_matrix.outputs.matrix) }}
     defaults:
