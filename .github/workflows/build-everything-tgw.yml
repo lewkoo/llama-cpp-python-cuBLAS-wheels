@@ -23,7 +23,7 @@ jobs:
   sleep_1:
     name: Sleep for 15 minutes
     needs: build_textgen_wheels_windows
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Sleep for 1 hour
         run: sleep 1800
@@ -39,7 +39,7 @@ jobs:
   sleep_2:
     name: Sleep for 15 minutes
     needs: build_textgen_wheels_linux
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Sleep for 1 hour
         run: sleep 1800
@@ -55,7 +55,7 @@ jobs:
   sleep_3:
     name: Sleep for 15 minutes
     needs: build_wheels_tensorcores_windows
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Sleep for 1 hour
         run: sleep 1800
@@ -71,7 +71,7 @@ jobs:
   sleep_4:
     name: Sleep for 15 minutes
     needs: build_wheels_tensorcores_linux
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Sleep for 1 hour
         run: sleep 1800
@@ -86,7 +86,7 @@ jobs:
   sleep_5:
     name: Sleep for 15 minutes
     needs: build_wheels_cpu
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Sleep for 1 hour
         run: sleep 1800
@@ -101,7 +101,7 @@ jobs:
   sleep_6:
     name: Sleep for 15 minutes
     needs: build_wheels_macos
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Sleep for 1 hour
         run: sleep 1800
