@@ -2,16 +2,16 @@ Set-Location $PSScriptRoot
 
 $destinationDir = if (Test-Path $(Join-Path $(Resolve-Path '.') 'index')) {Join-Path '.' 'index' -resolve} else {(New-Item 'index' -ItemType 'Directory').fullname}
 $avxVersions = "AVX","AVX2","AVX512","basic"
-$cudaVersions = "11.6","11.7","11.8","12.0","12.1","12.2","rocm5.4.2","rocm5.5","rocm5.5.1","rocm5.6.1","cpu"
-$packageVersions = (@(62)+66..74+76..85).foreach({"$_".Insert(0,'0.1.')}) + (0..11+14..20+@(23)).foreach({"$_".Insert(0,'0.2.')})
+$cudaVersions = "11.8","12.1","rocm5.4.2","rocm5.5","rocm5.5.1","rocm5.6.1","cpu"
+$packageVersions = (25).foreach({"$_".Insert(0,'0.2.')})
 $pythonVersions = "3.7","3.8","3.9","3.10","3.11"
 $supportedSystems = 'linux_x86_64','win_amd64','macosx_11_0_x86_64','macosx_12_0_x86_64','macosx_13_0_x86_64','macosx_14_0_x86_64','macosx_11_0_arm64','macosx_12_0_arm64','macosx_13_0_arm64','macosx_14_0_arm64','macosx_11_0_aarch64','macosx_12_0_aarch64','macosx_13_0_aarch64','macosx_14_0_aarch64'
-$wheelSource = 'https://github.com/jllllll/llama-cpp-python-cuBLAS-wheels/releases/download'
+$wheelSource = 'https://github.com/lewkoo/llama-cpp-python-cuBLAS-wheels/releases/download'
 $packageName = 'llama_cpp_python'
 $packageNameNormalized = 'llama-cpp-python'
 $packageNameAlt = 'llama_cpp_python_ggml'
 $packageNameAltNormalized = 'llama-cpp-python-ggml'
-$packageAltVersions = @("0.1.78")
+$packageAltVersions = @("0.2.55")
 
 $avxVersions.foreach({Set-Variable "$_`Dir" $(if (Test-Path $(Join-Path $destinationDir $_)) {Join-Path $destinationDir $_} else {(New-Item $(Join-Path $destinationDir $_) -ItemType 'Directory').fullname})})
 
