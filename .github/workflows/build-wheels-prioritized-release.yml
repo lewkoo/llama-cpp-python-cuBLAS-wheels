@@ -40,7 +40,7 @@ jobs:
     uses: ./.github/workflows/build-wheels-rocm-full.yml
     with:
       version: ${{ inputs.version }}
-      config: 'os:ubuntu-20.04;pyver:3.10;rocm:5.6.1;rename:1'
+      config: 'os:self-hosted;pyver:3.10;rocm:5.6.1;rename:1'
       exclude: 'None'
       
   build_wheels_macos_prio:
@@ -89,4 +89,4 @@ jobs:
     uses: ./.github/workflows/build-wheels-rocm-full.yml
     with:
       version: ${{ inputs.version }}
-      exclude: 'os:ubuntu-20.04,pyver:3.10,rocm:5.6.1,rename:1'
+      exclude: 'os:self-hosted,pyver:3.10,rocm:5.6.1,rename:1'
